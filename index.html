@@ -8,6 +8,9 @@
     .right {text-align: right;}
     body {
         background-color: #f8f9fa;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
     .navbar-info {
         font-size: 0.9rem;
@@ -18,13 +21,19 @@
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+    .main-content {
+        flex: 1 0 auto;
+    }
+    footer {
+        flex-shrink: 0;
+    }
 </style>
 </head>
 <body>
 
 <nav class="navbar" style="background-color:#003366;">
   <div class="container-fluid helvetica">
-    <a class="navbar-brand helvetica" href="#">
+    <a class="navbar-brand helvetica" href="#" >
       <b>SIU-WEB</b>
     </a>
 
@@ -39,7 +48,7 @@
   </div>
 </nav>
 
-<div class="container my-4">
+<div class="container my-4 main-content">
   <div class="d-flex justify-content-end mb-3">
     <div class="btn-group" role="group" aria-label="Opciones">
       <button type="button" class="btn btn-outline-primary"><i class="bi bi-printer"></i> Imprimir</button>
@@ -49,7 +58,7 @@
   </div>
 
   <div class="table-container">
-    <h3 class="mb-3 text-primary">Horario Formato Tabular</h3>
+    <h3 class="mb-3 text-gray">Horario Formato Tabular</h3>
     <div class="table-responsive">
       <table class="table table-hover table-striped align-middle">
 <thead class="table-dark">
