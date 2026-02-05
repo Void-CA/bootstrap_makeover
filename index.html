@@ -1,167 +1,126 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>SIU - Sistema de Inscripcion Universitaria v1.0</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<style>
-    .center {text-align: center;}
-    .helvetica {font-family: Arial, Helvetica, sans-serif; color: #fff;}
-    .right {text-align: right;}
-    body {
-        background-color: #f8f9fa;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-    .navbar-info {
-        font-size: 0.9rem;
-    }
-    .table-container {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .main-content {
-        flex: 1 0 auto;
-    }
-    footer {
-        flex-shrink: 0;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIU - Sistema de Inscripcion Universitaria v1.0</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
-<nav class="navbar" style="background-color:#003366;">
-  <div class="container-fluid helvetica">
-    <a class="navbar-brand helvetica" href="#" >
-      <b>SIU-WEB</b>
-    </a>
-
-    <h2 class="mb-0">
-        SISTEMA ACADEMICO DOCENTE
-    </h2>
-
-    <div class="navbar-info">
-        <strong>Usuario:</strong> A. Cisneros <br>
-        <span class="badge bg-light text-dark">Profesor 2026-I</span>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">SIU-WEB</a>
+    <span class="navbar-text mx-auto h4 mb-0">SISTEMA ACADÉMICO DOCENTE</span>
+    <span class="navbar-text text-end">
+      Usuario: <span class="fw-bold">A. Cisneros</span><br>
+      <span class="badge bg-info text-dark">Profesor 2026-I</span>
+    </span>
   </div>
 </nav>
 
-<div class="container my-4 main-content">
-  <div class="d-flex justify-content-end mb-3">
-    <div class="btn-group" role="group" aria-label="Opciones">
-      <button type="button" class="btn btn-outline-primary"><i class="bi bi-printer"></i> Imprimir</button>
-      <button type="button" class="btn btn-outline-secondary"><i class="bi bi-download"></i> Exportar</button>
-      <button type="button" class="btn btn-outline-success"><i class="bi bi-arrow-clockwise"></i> Actualizar</button>
-    </div>
+<div class="container mb-4">
+  <div class="d-flex justify-content-end gap-2 mb-3">
+    <button type="button" class="btn btn-outline-primary"><i class="bi bi-printer"></i> Imprimir</button>
+    <button type="button" class="btn btn-outline-secondary"><i class="bi bi-download"></i> Exportar</button>
+    <button type="button" class="btn btn-danger"><i class="bi bi-arrow-clockwise"></i> Actualizar</button>
   </div>
 
-  <div class="table-container">
-    <h3 class="mb-3 text-gray">Horario Formato Tabular</h3>
-    <div class="table-responsive">
-      <table class="table table-hover table-striped align-middle">
-<thead class="table-dark">
-    <th width="10%" class="center">CODIGO</th>
-    <th width="30%" class="center">ASIGNATURA</th>
-    <th width="10%" class="center">GRUPO</th>
-    <th width="15%" class="center">DIA</th>
-    <th width="20%" class="center">HORARIO</th>
-    <th width="15%" class="center">AULA</th>
-</thead>
-    
-<tbody class="center">
-    <tr class="table-light">
-    <td>0413</td>
-    <td><strong>PROGRAMACION WEB</strong></td>
-    <td><span class="badge rounded-pill text-bg-primary">Gpo1</span></td>
-    <td>MARTES</td>
-    <td>10:00 - 11:40</td>
-    <td>E201</td>
-</tr>
-
-<tr class="table-warning"> <td>0413</td>
-    <td><strong>PROGRAMACION WEB</strong></td>
-    <td><span class="badge rounded-pill text-bg-primary">Gpo1</span></td>
-    <td>JUEVES</td>
-    <td>15:00 - 16:40</td>
-    <td>E201</td>
-</tr>
-
-<tr class="table-light">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-success">Gpo3</span></td>
-    <td>LUNES</td>
-    <td>08:00 - 09:40</td>
-    <td>D104</td>
-</tr>
-
-<tr class="table-warning">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-success">Gpo3</span></td>
-    <td>MIERCOLES</td>
-    <td>08:00 - 09:40</td>
-    <td>D104</td>
-</tr>
-
-<tr class="table-light">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-warning text-dark">Gpo4</span></td>
-    <td>LUNES</td>
-    <td>10:00 - 11:40</td>
-    <td>E201</td>
-</tr>
-
-<tr class="table-warning">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-warning text-dark">Gpo4</span></td>
-    <td>JUEVES</td>
-    <td>08:00 - 09:40</td>
-    <td>E201</td>
-</tr>
-<tr class="table-light">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-info text-dark">Gpo7</span></td>
-    <td>LUNES</td>
-    <td>03:00 - 04:40</td>
-    <td>D104</td>
-</tr>
-
-<tr class="table-warning">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-info text-dark">Gpo7</span></td>
-    <td>JUEVES</td>
-    <td>01:00 - 02:40</td>
-    <td>D104</td>
-</tr>
-
-    <tr class="table-light">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-danger">Gpo8</span></td>
-    <td>MARTES</td>
-    <td>03:00 - 04:40</td>
-    <td>D104</td>
-</tr>
-
-<tr class="table-warning">
-    <td>0402</td>
-    <td>INTRO. INGENIERIA</td>
-    <td><span class="badge rounded-pill text-bg-danger">Gpo8</span></td>
-    <td>MIERCOLES</td>
-    <td>01:00 - 02:40</td>
-    <td>D104</td>
-</tr>
-</tbody>
-
-</table>
-    </div>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <th style="width:10%">CÓDIGO</th>
+          <th style="width:30%">ASIGNATURA</th>
+          <th style="width:10%">GRUPO</th>
+          <th style="width:15%">DÍA</th>
+          <th style="width:20%">HORARIO</th>
+          <th style="width:15%">AULA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0413</td>
+          <td class="fw-bold text-center">PROGRAMACION WEB</td>
+          <td><span class="badge bg-primary">Gpo1</span></td>
+          <td>MARTES</td>
+          <td>10:00 - 11:40</td>
+          <td><span class="badge bg-warning text-dark">E201</span></td>
+        </tr>
+        <tr>
+          <td>0413</td>
+          <td class="fw-bold text-center">PROGRAMACION WEB</td>
+          <td><span class="badge bg-primary">Gpo1</span></td>
+          <td>JUEVES</td>
+          <td>15:00 - 16:40</td>
+          <td><span class="badge bg-warning text-dark">E201</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-success">Gpo3</span></td>
+          <td>LUNES</td>
+          <td>08:00 - 09:40</td>
+          <td><span class="badge bg-info text-dark">D104</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-success">Gpo3</span></td>
+          <td>MIERCOLES</td>
+          <td>08:00 - 09:40</td>
+          <td><span class="badge bg-info text-dark">D104</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-warning text-dark">Gpo4</span></td>
+          <td>LUNES</td>
+          <td>10:00 - 11:40</td>
+          <td><span class="badge bg-warning text-dark">E201</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-warning text-dark">Gpo4</span></td>
+          <td>JUEVES</td>
+          <td>08:00 - 09:40</td>
+          <td><span class="badge bg-warning text-dark">E201</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-info text-dark">Gpo7</span></td>
+          <td>LUNES</td>
+          <td>03:00 - 04:40</td>
+          <td><span class="badge bg-info text-dark">D104</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-info text-dark">Gpo7</span></td>
+          <td>JUEVES</td>
+          <td>01:00 - 02:40</td>
+          <td><span class="badge bg-info text-dark">D104</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-danger">Gpo8</span></td>
+          <td>MARTES</td>
+          <td>03:00 - 04:40</td>
+          <td><span class="badge bg-info text-dark">D104</span></td>
+        </tr>
+        <tr>
+          <td>0402</td>
+          <td>INTRO. INGENIERIA</td>
+          <td><span class="badge bg-danger">Gpo8</span></td>
+          <td>MIERCOLES</td>
+          <td>01:00 - 02:40</td>
+          <td><span class="badge bg-info text-dark">D104</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -171,6 +130,8 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Iconos Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </body>
 </html>
