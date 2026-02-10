@@ -1,10 +1,10 @@
 import { fetchJsonData } from './data.js';
 import { ContentBuilder } from './builder.js';
 
-const data = fetchJsonData();
+const data = await fetchJsonData();
 const calendarBtn = document.getElementById('calendar');
 let builder = new ContentBuilder('content-container');
-let calendarActive = false;
+let calendarActive = true;
 
 function toggleBtnText() {
     if (!calendarActive) {
@@ -18,7 +18,7 @@ function toggleBtnText() {
 }
 
 function toggleContent() {
-    if (!calendarActive) {
+    if (calendarActive) {
         builder.buildTable(data);
     }
     else {
@@ -31,3 +31,5 @@ calendarBtn.addEventListener('click', () => {
     toggleBtnText();
 
     });
+
+builder.buildTable(data);
