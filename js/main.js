@@ -4,7 +4,7 @@ import { ContentBuilder } from './builder.js';
 const data = await fetchJsonData();
 const calendarBtn = document.getElementById('calendar');
 let builder = new ContentBuilder('content-container');
-let calendarActive = true;
+let calendarActive = false;
 
 function toggleBtnText() {
     if (!calendarActive) {
