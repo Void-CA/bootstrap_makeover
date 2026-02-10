@@ -1,3 +1,6 @@
+import { fetchJsonData } from './data.js';
+
+const data = fetchJsonData();
 const calendarBtn = document.getElementById('calendar');
 let contentContainer = document.getElementById('content-container');
 let calendarActive = false;
@@ -14,6 +17,7 @@ function toggleBtnText() {
 }
 
 
+function buildTable() {
 
 
 
