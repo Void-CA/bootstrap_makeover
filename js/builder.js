@@ -111,9 +111,9 @@ export class ContentBuilder {
         if (!this.container) return;
         this.container.innerHTML = '';
 
-        const days = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES'];
-        const schedule = [...new Set(data.map(d => d.horario))].sort();
-
+        const days = ['LUNES', 'MARTES', 'MIERCOLES', 'JUEVES', 'VIERNES'];
+        const schedule = ["08:00 - 09:40", "09:40 - 10:00", "10:00 - 11:40", "11:40 - 01:00",  "01:00 - 02:40","02:40 - 03:00", "03:00 - 04:40"];
+        const rest_times = ["09:40 - 10:00", "11:40 - 01:00", "02:40 - 03:00"];
         const table = document.createElement('table');
         table.className = 'table table-bordered text-center align-middle';
 
@@ -133,6 +133,24 @@ export class ContentBuilder {
 
         const tbody = document.createElement('tbody');
         schedule.forEach(horario => {
+            if (rest_times.includes(horario)) {
+                const row = document.createElement('tr');
+                const thHorario = document.createElement('th');
+                thHorario.className = 'table-secondary';
+                thHorario.textContent = horario;
+                row.appendChild(thHorario);
+                const td = document.createElement('td');
+                td.colSpan = days.length;
+                td.className = 'table-secondary';
+                if (horario == "11:40 - 01:00") {
+                    td.innerHTML = '<em>Almuerzo</em>';
+                } else {
+                    td.innerHTML = '<em>Receso</em>';
+                }
+                row.appendChild(td);
+                tbody.appendChild(row);
+                return;
+            }
             const row = document.createElement('tr');
             const thHorario = document.createElement('th');
             thHorario.className = 'table-secondary';
@@ -143,9 +161,9 @@ export class ContentBuilder {
                 const cell = document.createElement('td');
                 const events = data.filter(d => d.dia === day && d.horario === horario);
 
-                    events.forEach(evt => {
-                        cell.appendChild(this.createCalendarCard(evt));
-                    });
+                events.forEach(evt => {
+                    cell.appendChild(this.createCalendarCard(evt));
+                });
                 row.appendChild(cell);
             });
             tbody.appendChild(row);
