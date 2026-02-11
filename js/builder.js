@@ -49,6 +49,32 @@ export class ContentBuilder {
         return row;
     }
 
+    createCalendarCard(item) {
+        const card = document.createElement('div');
+        card.className = 'p-3 mb-2 bg-primary-subtle text-primary-emphasis rounded-3';
+        
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body p-2';
+        
+        const title = document.createElement('h5');
+        title.className = 'card-title mb-1 fw-bold';
+        title.textContent = item.asignatura;
+        
+        const classroom = document.createElement('p');
+        classroom.className = 'card-text mb-0';
+        classroom.textContent = `Aula: ${item.aula}`;
+        
+        const groupBadge = this.createBadge('grupo', item.grupo);
+
+        
+
+        cardBody.appendChild(title);
+        cardBody.appendChild(classroom);
+        cardBody.appendChild(groupBadge);
+        card.appendChild(cardBody);
+
+        return card;
+    }
     // --- BUILDERS ---
 
     buildTable(data) {
@@ -117,23 +143,9 @@ export class ContentBuilder {
                 const cell = document.createElement('td');
                 const events = data.filter(d => d.dia === day && d.horario === horario);
 
-                events.forEach(evt => {
-                    const card = document.createElement('div');
-                    card.className = 'p-1 mb-1 border rounded bg-light';
-
-                    const titulo = document.createElement('div');
-                    titulo.className = 'fw-bold small';
-                    titulo.textContent = evt.asignatura;
-
-                    card.appendChild(titulo);
-                    card.appendChild(this.createBadge('grupo', evt.grupo));
-                    card.appendChild(document.createTextNode(' '));
-                    const aulaText = document.createTextNode('aula: ');
-                    card.appendChild(aulaText);
-                    card.appendChild(this.createBadge('aula', evt.aula));
-
-                    cell.appendChild(card);
-                });
+                    events.forEach(evt => {
+                        cell.appendChild(this.createCalendarCard(evt));
+                    });
                 row.appendChild(cell);
             });
             tbody.appendChild(row);
