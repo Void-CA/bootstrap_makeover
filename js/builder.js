@@ -51,7 +51,7 @@ export class ContentBuilder {
 
     createCalendarCard(item) {
         const card = document.createElement('div');
-        card.className = 'p-3 mb-2 bg-primary-subtle text-primary-emphasis rounded-3';
+        card.className = 'p-3 mb-2 bg-dark-subtle text-dark rounded-3';
         
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body p-2';
