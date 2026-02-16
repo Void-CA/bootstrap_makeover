@@ -1,6 +1,6 @@
 export async function fetchJsonData() {
   try {
-    const response = await fetch('../data.json'); // Path to your JSON file
+    const response = await fetch('/bootstrap_makeover/data.json');
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
